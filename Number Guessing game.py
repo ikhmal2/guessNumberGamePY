@@ -22,13 +22,45 @@ def hint(n):
     print(" Add it by 40")
 
 def checkAns(n,ans):
+    global result
     if ans==n:
         print("You found the correct answer!")
+        result = True
     else:
         print("Ooopsies, wrong answer please try again")
+        result = False
+    return result
+
+def initProfile():
+    global n, name, score
+    n = random.randint(0,1000)
+    name = " "
+    score = 0
+
+    print("Hello welcome to Number Guessing Game by ikhmalloy...")
+    name = input("Please enter your name here: ")
+
+    print(f"\nHi {name} For startup I will set your score to 10. You guess it right I add more points")
+    print("But if you guess it wrong, points will be deducted")
+    score = 10
+    time.sleep(3)
+
+def ifWrong(result, score):
+    while result == False:
+      ans = input("\nEnter you guess here: ")
+      ans = int(ans)
+      checkAns(n,ans)  
+
+def scoring(result):
+    if result == True:
+        score += 10
+    else:
+        score -= 10
+    return score
+
 #main
 animate()
-n = random.randint(0,1000)
+initProfile()
 time.sleep(3) 
 print("\nA random number was generated just now!")
 print("Can you guess the number?")
@@ -36,5 +68,4 @@ hint(n)
 ans = input("\nEnter you guess here: ")
 ans = int(ans)
 checkAns(n,ans)
-
-#created by Ikhmal Fahmi 19 April 2021
+ifWrong(result)
