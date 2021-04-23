@@ -40,7 +40,7 @@ def initProfile():
     print("Hello welcome to Number Guessing Game by ikhmalloy...")
     name = input("Please enter your name here: ")
 
-    print(f"\nHi {name} For startup I will set your score to 10. You guess it right I add more points")
+    print(f"\nHi {name} For startup I will set your score to 10. You guess it right I add more points") #use 'f' as apa tah lupo den haa
     print("But if you guess it wrong, points will be deducted")
     score = 10
     time.sleep(3)
